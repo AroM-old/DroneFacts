@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Drone Facts</string>
+    <string name="splash_screen">Drone Facts</string>
+    <string name="touch_screen">Touch the screen to continue!</string>
+    <string name="button_ok">OK</string>
+    <string name="button_hint">Hint</string>
+    
+    <string-array name="questions">
+        <item>1. What are RTF drones?</item>
+        <item>2. In what year did the United States first deploy an armed drone?</item>
+        <item>3. Which segment of American society is opposed to the use of the word "drone"?</item>
+        <item>4. True or false: Drones are banned at U.S. national parks.</item>
+        <item>5. What are UCAVs?</item>
+    </string-array>
+    <string-array name="answers">
+        <item>hobbyist drones</item>
+        <item>2001</item>
+        <item>Regulators</item>
+        <item>True</item>
+        <item>UAVs designed for combat</item>
+    </string-array>
+    <string-array name="hints">
+        <item>Small and easy to fly</item>
+        <item>One after 2000</item>
+        <item>The deparment that regulate drone uses</item>
+        <item>The opposite of false</item>
+        <item>For military purposes</item>
+    </string-array>
+</resources>
