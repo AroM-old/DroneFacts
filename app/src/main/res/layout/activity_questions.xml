@@ -7,6 +7,31 @@
     android:background="#729C34"
     tools:context="com.example.android.dronefacts.activity_questions">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:fontFamily="monospace"
+            android:text="Question No. "/>
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="20sp"
+            android:text="1/5"/>
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/question"
         android:layout_width="wrap_content"
@@ -50,7 +75,7 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:id="@+id/answer_image"/>
     <TextView
@@ -68,7 +93,7 @@
         android:text="Next"
         android:textColor="#4D7514"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:padding="2dp"
         android:id="@+id/next_button"
         android:onClick="onNextClick"

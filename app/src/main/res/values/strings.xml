@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Drone Facts</string>
     <string name="splash_screen">Drone Facts</string>
-    <string name="touch_screen">Touch the screen to continue!</string>
+    <string name="version">Ver. 0.1A</string>
     <string name="button_ok">OK</string>
     <string name="button_hint">Hint</string>
-    
+
     <string-array name="questions">
         <item>1. What are RTF drones?</item>
         <item>2. In what year did the United States first deploy an armed drone?</item>
