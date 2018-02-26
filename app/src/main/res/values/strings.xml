@@ -11,6 +11,7 @@
         <item>3. Which segment of American society is opposed to the use of the word "drone"?</item>
         <item>4. True or false: Drones are banned at U.S. national parks.</item>
         <item>5. What are UCAVs?</item>
+        <item>6. As of 2016, the FAA limits consumer drones to what maximum altitude?</item>
     </string-array>
     <string-array name="answers">
         <item>hobbyist drones</item>
@@ -18,6 +19,7 @@
         <item>Regulators</item>
         <item>True</item>
         <item>UAVs designed for combat</item>
+        <item>400 feet</item>
     </string-array>
     <string-array name="hints">
         <item>Small and easy to fly</item>
@@ -25,5 +27,6 @@
         <item>The deparment that regulate drone uses</item>
         <item>The opposite of false</item>
         <item>For military purposes</item>
+        <item>Below than 500 feet</item>
     </string-array>
 </resources>

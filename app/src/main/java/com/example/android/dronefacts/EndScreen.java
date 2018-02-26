@@ -11,9 +11,9 @@ public class EndScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_end_screen);
 
-        String s = getIntent().getStringExtra("FINAL_SCORE");
+        int s = getIntent().getIntExtra("FINAL_SCORE", 0);
 
         TextView finalScore = findViewById(R.id.text_view_score);
-        finalScore.setText(s);
+        finalScore.setText(String.valueOf(s));
     }
 }
