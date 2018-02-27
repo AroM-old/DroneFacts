@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="#729C34"
+    android:onClick="start_quiz"
     tools:context="com.example.android.dronefacts.MainActivity">
 
     <TextView
@@ -21,6 +22,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:src="@mipmap/dronelogohdpi"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="40dp"
+        android:textColor="#4D7514"
+        android:textSize="30sp"
+        android:text="Touch to Start"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
