@@ -1,15 +1,20 @@
 package com.example.android.dronefacts;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,9 +47,19 @@ public class activity_questions extends AppCompatActivity {
      * */
     public void onHintClick(View view) {
 
+        hideKeyboardOnClick();
+
         String[] hints = getResources().getStringArray(R.array.hints);
 
-        Toast tosty = Toast.makeText(getApplicationContext(),hints[questionNo], Toast.LENGTH_SHORT);
+        LayoutInflater inflater = getLayoutInflater();
+        View layout =inflater.inflate(R.layout.custom_toast, (ViewGroup)findViewById(R.id.custom_toast_container));
+        TextView text = layout.findViewById(R.id.text);
+        text.setText(hints[questionNo]);
+
+        Toast tosty = new Toast(getApplicationContext());
+        tosty.setDuration(Toast.LENGTH_LONG);
+        tosty.setGravity(Gravity.CENTER | Gravity.BOTTOM,0,0);
+        tosty.setView(layout);
         tosty.show();
     }
 
@@ -54,6 +69,8 @@ public class activity_questions extends AppCompatActivity {
      * screen with the next question when user click the ok button
      * */
     public void onAnswerClick(View view) {
+
+        hideKeyboardOnClick();
 
 
         if (done == false){
@@ -88,6 +105,21 @@ public class activity_questions extends AppCompatActivity {
         }
 
 
+    }
+
+    /**
+     * When click in button hide keyboard to show
+     * if answer is correct or wrong.
+     * */
+    private void hideKeyboardOnClick() {
+        LinearLayout mainLayout;
+
+        // Get your layout set up, this is just an example
+        mainLayout = findViewById(R.id.myLinearLayout);
+
+        // Then just use the following:
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(mainLayout.getWindowToken(), 0);
     }
 
     /**

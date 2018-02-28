@@ -23,12 +23,22 @@
         android:fontFamily="monospace"
         android:text="8"/>
     <Button
+        android:id="@+id/play_again"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
         android:textColor="#4D7514"
         android:padding="10dp"
         android:text="Play Again!"
+        style="@style/Widget.AppCompat.Button.Colored"/>
+    <Button
+        android:id="@+id/exit_quiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:textColor="#4D7514"
+        android:padding="10dp"
+        android:text="Exit"
         style="@style/Widget.AppCompat.Button.Colored"/>
 
 </LinearLayout>
