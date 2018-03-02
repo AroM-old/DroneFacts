@@ -2,6 +2,7 @@ package com.example.android.dronefacts;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -84,6 +85,8 @@ public class activity_questions extends AppCompatActivity {
 
                 TextView t = findViewById(R.id.correctOrNot);
                 t.setText("Correct!");
+                MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.right);
+                mp.start();
                 t.setGravity(Gravity.CENTER);
                 ImageView i = findViewById(R.id.answer_image);
                 i.setImageResource((R.mipmap.dronerighthdpi));
@@ -95,6 +98,8 @@ public class activity_questions extends AppCompatActivity {
                 TextView t = findViewById(R.id.correctOrNot);
                 t.setTextSize(30);
                 t.setText("Correct answer: " + correctAnswer);
+                MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.wrong);
+                mp.start();
                 t.setGravity(Gravity.CENTER);
                 ImageView i = findViewById(R.id.answer_image);
                 i.setImageResource((R.mipmap.dronewronghdpi));
