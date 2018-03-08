@@ -16,8 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity_questions" />
-        <activity android:name=".EndScreen"></activity>
+        <activity android:name=".QuestionsSet1" />
+        <activity android:name=".EndScreen" />
+        <activity android:name=".QuestionSet2"></activity>
     </application>
 
 </manifest>

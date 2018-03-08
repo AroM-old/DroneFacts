@@ -23,7 +23,7 @@ public class EndScreen extends AppCompatActivity {
         playAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), activity_questions.class);
+                Intent i = new Intent(getApplicationContext(), QuestionsSet1.class);
                 startActivity(i);
             }
         });

@@ -5,7 +5,8 @@
     <string name="button_ok">OK</string>
     <string name="button_hint">Hint</string>
 
-    <string-array name="questions">
+    <!--Beginning of first set of question, answers, and hints-->
+    <string-array name="questions_set1">
         <item>1. What are RTF drones?</item>
         <item>2. In what year did the United States first deploy an armed drone?</item>
         <item>3. Which segment of American society is opposed to the use of the word "drone"?</item>
@@ -13,7 +14,7 @@
         <item>5. What are UCAVs?</item>
         <item>6. As of 2016, the FAA limits consumer drones to what maximum altitude?</item>
     </string-array>
-    <string-array name="answers">
+    <string-array name="answers_set1">
         <item>hobbyist drones</item>
         <item>2001</item>
         <item>Regulators</item>
@@ -21,7 +22,7 @@
         <item>UAVs designed for combat</item>
         <item>400 feet</item>
     </string-array>
-    <string-array name="hints">
+    <string-array name="hints_set1">
         <item>Small and easy to fly</item>
         <item>One after 2000</item>
         <item>The department that regulate drone uses</item>
@@ -29,4 +30,19 @@
         <item>For military purposes</item>
         <item>Below than 500 feet</item>
     </string-array>
+    <!--End of-->
+
+    <!--Beginning of Second set of question, answers, and hints-->
+    <string-array name="questions_set2">
+        <item>7. In 2014, entrepreneurs in Minnesota were grounded by the Federal Aviation Administration (FAA) after using drones to deliver what product to fishermen at a local lake?</item>
+    </string-array>
+    <string-array name="answers_set2">
+        <item>Beer</item>
+        <item>Cheese</item>
+        <item>Worms</item>
+    </string-array>
+    <string-array name="hints_set2">
+        <item>Alcoholic Beverages</item>
+    </string-array>
+
 </resources>

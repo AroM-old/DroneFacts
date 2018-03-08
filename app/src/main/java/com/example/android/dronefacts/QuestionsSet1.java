@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class activity_questions extends AppCompatActivity {
+public class QuestionsSet1 extends AppCompatActivity {
 
     /**
      * Variables to check user state and change questions
@@ -31,9 +30,9 @@ public class activity_questions extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_questions);
+        setContentView(R.layout.activity_questions_set1);
         //Set text view to first question from the string array list
-        String[] questions = getResources().getStringArray(R.array.questions);
+        String[] questions = getResources().getStringArray(R.array.questions_set1);
         TextView t = findViewById(R.id.question);
         t.setText(questions[questionNo]);
 
@@ -50,7 +49,7 @@ public class activity_questions extends AppCompatActivity {
 
         hideKeyboardOnClick();
 
-        String[] hints = getResources().getStringArray(R.array.hints);
+        String[] hints = getResources().getStringArray(R.array.hints_set1);
 
         LayoutInflater inflater = getLayoutInflater();
         View layout =inflater.inflate(R.layout.custom_toast, (ViewGroup)findViewById(R.id.custom_toast_container));
@@ -76,7 +75,7 @@ public class activity_questions extends AppCompatActivity {
 
         if (done == false){
             String answer = ((EditText)findViewById(R.id.answer)).getText().toString();
-            String[] answers = getResources().getStringArray(R.array.answers);
+            String[] answers = getResources().getStringArray(R.array.answers_set1);
             String correctAnswer = answers[questionNo];
             answer = answer.toUpperCase();
             correctAnswer = correctAnswer.toUpperCase();
@@ -163,7 +162,7 @@ public class activity_questions extends AppCompatActivity {
          * */
     public void onNextClick(View view) {
         if (done){
-            String[] questions = getResources().getStringArray(R.array.questions);
+            String[] questions = getResources().getStringArray(R.array.questions_set1);
             if (questionNo < (questions.length - 1)){
                 questionNo = questionNo + 1;
                 TextView t = findViewById(R.id.question);
@@ -182,12 +181,19 @@ public class activity_questions extends AppCompatActivity {
 
                 done = false;
             }else{
-                //Call the end of screen and show the final score to user
-                Log.d("End of screen call", "Show end screen");
-                Intent i = new Intent(this, EndScreen.class);
-                i.putExtra("FINAL_SCORE", score);
-                startActivity(i);
+
+                Intent newSet = new Intent(this, QuestionSet2.class);
+                newSet.putExtra("Score", score);
+                newSet.putExtra("Boolean", done);
+                startActivity(newSet);
                 finish();
+
+                //Call the end of screen and show the final score to user
+//                Log.d("End of screen call", "Show end screen");
+//                Intent i = new Intent(this, EndScreen.class);
+//                i.putExtra("FINAL_SCORE", score);
+//                startActivity(i);
+//                finish();
             }
         }
     }
