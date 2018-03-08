@@ -28,6 +28,8 @@ public class QuestionSet2 extends AppCompatActivity {
     private int questionNo;
     private int answerOpt;
     private int score;
+    RadioButton optOne, optTwo, optThree;
+    RadioButton[] buttons;
 
 
     @Override
@@ -39,19 +41,16 @@ public class QuestionSet2 extends AppCompatActivity {
         TextView t = findViewById(R.id.question);
         t.setText(questions[questionNo]);
 
-        String[] answer = getResources().getStringArray(R.array.answers_set2);
-        for (int num = 0; num < answer.length; num++){
+        // Declare them up here so that you can re-use them for other methods
+        optOne = findViewById(R.id.radio_button_opt1);
+        optTwo = findViewById(R.id.radio_button_opt2);
+        optThree = findViewById(R.id.radio_button_opt3);
 
-            RadioButton optOne = findViewById(R.id.radio_button_opt1);
-            optOne.setText(answer[num]);
-            RadioButton optTwo = findViewById(R.id.radio_button_opt2);
-            optTwo.setText(answer[num]);
-            RadioButton optThree = findViewById(R.id.radio_button_opt3);
-            optThree.setText(answer[num]);
+        // Add the buttons to an array so that you can iterate with your answers
+        buttons = new RadioButton[]{ optOne, optTwo, optThree};
 
-        }
-
-
+        // Move the rest of the code to a method
+        askRadioButtonQuestion();
 
 
         //Hide the text view, Image and next button when app start
@@ -59,6 +58,16 @@ public class QuestionSet2 extends AppCompatActivity {
         findViewById(R.id.correctOrNot).setVisibility(View.INVISIBLE);
         findViewById(R.id.next_button).setVisibility(View.INVISIBLE);
     }
+
+    void askRadioButtonQuestion() {
+        String[] answer = getResources().getStringArray(R.array.answers_set2);
+
+        // Now when you loop your buttons get the right text
+        for (int num = 0; num < answer.length; num++){
+            buttons[num].setText(answer[num]);
+        }
+    }
+
 
 //    /**
 //     * Show a question hint for the user
