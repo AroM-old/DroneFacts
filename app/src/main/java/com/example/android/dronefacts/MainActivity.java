@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
      **/
     public void start_quiz(View view) {
 
-        Intent intent = new Intent(MainActivity.this, QuestionsSet1.class);
+//        Intent intent = new Intent(MainActivity.this, QuestionsSet1.class);
+        Intent intent = new Intent(MainActivity.this, QuestionSet2.class);
         startActivity(intent);
         finish();
 
