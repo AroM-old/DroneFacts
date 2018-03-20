@@ -70,7 +70,8 @@ public class QuestionsSet1 extends AppCompatActivity {
      * */
     public void onAnswerClick(View view) {
 
-        hideKeyboardOnClick();
+
+        hideKeyboardOnClick(); //Hide the keyboard when touch button.
 
 
         if (done == false){
@@ -125,6 +126,7 @@ public class QuestionsSet1 extends AppCompatActivity {
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(mainLayout.getWindowToken(), 0);
     }
+
 
     /**
      * Show a correct or incorrect message and apply a small animation

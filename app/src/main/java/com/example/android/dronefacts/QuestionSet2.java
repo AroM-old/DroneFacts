@@ -39,20 +39,15 @@ public class QuestionSet2 extends AppCompatActivity {
         TextView t = findViewById(R.id.question);
         t.setText(questions[questionNo]);
 
+        RadioButton optOne = findViewById(R.id.radio_button_opt1);
+        RadioButton optTwo = findViewById(R.id.radio_button_opt2);
+        RadioButton optThree = findViewById(R.id.radio_button_opt3);
+        RadioButton[] buttons =  new RadioButton[]{optOne, optTwo, optThree};
         String[] answer = getResources().getStringArray(R.array.answers_set2);
+
         for (int num = 0; num < answer.length; num++){
-
-            RadioButton optOne = findViewById(R.id.radio_button_opt1);
-            optOne.setText(answer[num]);
-            RadioButton optTwo = findViewById(R.id.radio_button_opt2);
-            optTwo.setText(answer[num]);
-            RadioButton optThree = findViewById(R.id.radio_button_opt3);
-            optThree.setText(answer[num]);
-
+            buttons[num].setText(answer[num]);
         }
-
-
-
 
         //Hide the text view, Image and next button when app start
         findViewById(R.id.answer_image).setVisibility(View.INVISIBLE);
@@ -60,32 +55,32 @@ public class QuestionSet2 extends AppCompatActivity {
         findViewById(R.id.next_button).setVisibility(View.INVISIBLE);
     }
 
-//    /**
-//     * Show a question hint for the user
-//     * */
-//    public void onHintClick(View view) {
-//
-//        hideKeyboardOnClick();
-//
-//        String[] hints = getResources().getStringArray(R.array.hints_set2);
-//
-//        LayoutInflater inflater = getLayoutInflater();
-//        View layout =inflater.inflate(R.layout.custom_toast, (ViewGroup)findViewById(R.id.custom_toast_container));
-//        TextView text = layout.findViewById(R.id.text);
-//        text.setText(hints[questionNo]);
-//
-//        Toast tosty = new Toast(getApplicationContext());
-//        tosty.setDuration(Toast.LENGTH_LONG);
-//        tosty.setGravity(Gravity.CENTER | Gravity.BOTTOM,0,0);
-//        tosty.setView(layout);
-//        tosty.show();
-//    }
-//
-//    /**
-//     * Check user question and display a message showing the right answer,
-//     * if answer is wrong show the answer and the next button to populate
-//     * screen with the next question when user click the ok button
-//     * */
+    /**
+     * Show a question hint for the user
+     * */
+    public void onHintClick(View view) {
+
+        hideKeyboardOnClick();
+
+        String[] hints = getResources().getStringArray(R.array.hints_set2);
+
+        LayoutInflater inflater = getLayoutInflater();
+        View layout =inflater.inflate(R.layout.custom_toast, (ViewGroup)findViewById(R.id.custom_toast_container));
+        TextView text = layout.findViewById(R.id.text);
+        text.setText(hints[questionNo]);
+
+        Toast tosty = new Toast(getApplicationContext());
+        tosty.setDuration(Toast.LENGTH_LONG);
+        tosty.setGravity(Gravity.CENTER | Gravity.BOTTOM,0,0);
+        tosty.setView(layout);
+        tosty.show();
+    }
+
+    /**
+     * Check user question and display a message showing the right answer,
+     * if answer is wrong show the answer and the next button to populate
+     * screen with the next question when user click the ok button
+     * */
 //    public void onAnswerClick(View view) {
 //
 //        hideKeyboardOnClick();
@@ -129,21 +124,21 @@ public class QuestionSet2 extends AppCompatActivity {
 //
 //    }
 //
-//    /**
-//     * When click in button hide keyboard to show
-//     * if answer is correct or wrong.
-//     * */
-//    private void hideKeyboardOnClick() {
-//        LinearLayout mainLayout;
-//
-//        // Get your layout set up, this is just an example
-//        mainLayout = findViewById(R.id.myLinearLayout);
-//
-//        // Then just use the following:
-//        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-//        imm.hideSoftInputFromWindow(mainLayout.getWindowToken(), 0);
-//    }
-//
+    /**
+     * When click in button hide keyboard to show
+     * if answer is correct or wrong.
+     * */
+    private void hideKeyboardOnClick() {
+        LinearLayout mainLayout;
+
+        // Get your layout set up, this is just an example
+        mainLayout = findViewById(R.id.myLinearLayout);
+
+        // Then just use the following:
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(mainLayout.getWindowToken(), 0);
+    }
+
 //    /**
 //     * Show a correct or incorrect message and apply a small animation
 //     * to show the message.
